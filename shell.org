@@ -1,0 +1,31 @@
+#+TITLE: Shell
+#+STARTUP: indent
+
+* Key binding - Vim or Emacs
+
+Vim 的哲学是认为写代码时，浏览要比输入的需求更重，因此在 Normal 模式高效浏览，必要时切换到 Insert 模式输入。
+而命令行以输入为主，反复的切换反而会降低效率，因此私以为 Emacs 的 key binding 要比 Vim 的高效。
+
+*TIP* 若是复杂的命令可用 =c-x c-e= 启动 Vim 编辑，需要配置环境变量 =export EDITOR=vim= 。
+
+*Cheatsheets*:
+
+- Bash :: https://www.cheatography.com/davidsouther/cheat-sheets/bash-zsh-shourtcuts/pdf/
+- Zsh :: http://ivan.kanis.fr/zsh.pdf
+
+* Alias
+
+别名能够为命令、文件名创建快捷方式名称。
+
+比如模糊查询环境变量，不必在意大小写：
+
+#+BEGIN_SRC sh
+alias qenv='env |grep -i'~
+#+END_SRC
+
+
+一个重要的特点是，如果与命令同名，可以 shell 会调用别名而不是原命令，比如给 grep 飘红：
+
+#+BEGIN_SRC sh
+grep='grep  --color=auto'
+#+END_SRC
